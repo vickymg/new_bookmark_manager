@@ -16,7 +16,9 @@ feature 'Viewing links' do
   end
 
   scenario 'User can filter links by tag' do
-    visit '/tags/bubbles'
+    sign_up
+    fill_in :tag, with: 'bubbles'
+    click_button 'Search'
       expect(page).not_to have_content('Makers Academy')
       expect(page).not_to have_content('http:://www.bbc.co.uk')
       expect(page).to have_content('Bubbles')
