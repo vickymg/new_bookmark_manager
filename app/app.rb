@@ -21,12 +21,17 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/links' do
-    link = Link.create(title: params[:title],url: params[:url])
-    params[:tags].split(', ').each do |tag|
-      link.tags << Tag.create(name: tag)
+    if session[:user_id]
+      link = Link.create(title: params[:title],url: params[:url])
+      params[:tags].split(', ').each do |tag|
+        link.tags << Tag.create(name: tag)
+      end
+      link.save
+      redirect to('/links')
+    else
+      flash.keep[:error] = 'Please log in to add a link!'
+      redirect to '/sessions/new'
     end
-    link.save
-    redirect to('/links')
   end
 
   get '/tags/:name' do

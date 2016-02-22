@@ -1,6 +1,7 @@
 feature 'Adding tags' do
 
   scenario 'User can add a single tag to a new link' do
+    sign_up
     visit '/links/new'
     fill_in 'url', with: 'http://www.bbc.co.uk'
     fill_in 'title', with: 'BBC News'
@@ -11,6 +12,7 @@ feature 'Adding tags' do
   end
 
   scenario 'I can add multiple tags to a new link' do
+    sign_up
     visit '/links/new'
     fill_in 'url', with: 'http://www.makersacademy.com'
     fill_in 'title', with: 'Makers Academy'
