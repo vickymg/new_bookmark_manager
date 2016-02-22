@@ -20,4 +20,8 @@ feature 'User sign up' do
     expect { sign_up(email: nil) }.not_to change(User, :count)
   end
 
+  scenario 'user cannot sign up with an invalid email address' do
+    expect { sign_up(email: "exampleemail.com")}.not_to change(User, :count)
+  end
+  
 end
