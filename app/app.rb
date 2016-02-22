@@ -29,7 +29,7 @@ class BookmarkManager < Sinatra::Base
       link.save
       redirect to('/links')
     else
-      flash.keep[:error] = 'Please log in to add a link!'
+      flash.keep[:notice] = 'Please sign in to add a link!'
       redirect to '/sessions/new'
     end
   end

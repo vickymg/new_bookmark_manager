@@ -1,4 +1,4 @@
-<h1>Please sign up</h1>
+<h1>Please create an account...</h1>
 
 <form action='/users' method='post'>
   <label for='email'>
@@ -10,5 +10,12 @@
   <label for='password_confirmation'>
     Password confirmation: <input name='password_confirmation' type='password' required>
   </label>
-  <input type='submit' value='Sign up'>
+  <input type='submit' value='Create account'>
+</form>
+
+<form action='/sessions/new'>
+  <label for='Sign in'>
+    Already have an account?
+    <input type='submit' value='Sign in'>
+  </label>
 </form>
