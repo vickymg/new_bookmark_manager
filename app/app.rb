@@ -14,7 +14,7 @@ class BookmarkManager < Sinatra::Base
   get '/' do
     redirect to('/users/new')
   end
-    
+
   get '/links' do
     @links = Link.all
     erb :'links/index'
@@ -39,7 +39,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/tags/:name' do
-    tag = Tag.first(name: params[:name])
+    tag = Tag.all(name: params[:tag])
     @links = tag ? tag.links : []
     erb :'links/index'
   end
