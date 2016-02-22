@@ -11,6 +11,10 @@ class BookmarkManager < Sinatra::Base
   enable :sessions
   set :session_secret, 'super secret'
 
+  get '/' do
+    redirect to('/users/new')
+  end
+    
   get '/links' do
     @links = Link.all
     erb :'links/index'
