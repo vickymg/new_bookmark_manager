@@ -8,4 +8,19 @@ feature 'Viewing links' do
     end
   end
 
+  before(:each) do
+    Link.create(url: 'http:://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(name: 'education')])
+    Link.create(url: 'http:://www.bbc.co.uk', title: 'BBC News', tags: [Tag.first_or_create(name: 'news')])
+    Link.create(url: 'http:://www.bubbles.com', title: 'Bubbles', tags: [Tag.first_or_create(name: 'bubbles')])
+    Link.create(url: 'http:://www.google.com', title: 'Google', tags: [Tag.first_or_create(name: 'bubbles')])
+  end
+
+  scenario 'User can filter links by tag' do
+    visit '/tags/bubbles'
+      expect(page).not_to have_content('Makers Academy')
+      expect(page).not_to have_content('http:://www.bbc.co.uk')
+      expect(page).to have_content('Bubbles')
+      expect(page).to have_content('http:://www.google.com')
+  end
+
 end
