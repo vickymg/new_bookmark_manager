@@ -38,3 +38,4 @@ $ cd new_bookmark_manager
 $ bundle
 $ ruby app/app.rb
 ```
+The app is also live at https://new-bookmark-manager.herokuapp.com/users/new
