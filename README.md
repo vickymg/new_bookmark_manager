@@ -29,7 +29,6 @@ I want to tag my links
 As a user
 So I can find recently bookmarked sites
 I want to see links in reverse chronological order
-
 ```
 
 To download and use...
