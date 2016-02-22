@@ -1,6 +1,6 @@
 feature 'Creating links' do
 
-  scenario 'I can create a new link' do
+  scenario 'User can create a new link' do
     visit '/links/new'
     fill_in 'url',  with: 'http://www.bbc.co.uk'
     fill_in 'title', with: 'BBC News'
