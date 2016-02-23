@@ -9,7 +9,7 @@ Technologies used:
 * Testing - RSpec, Capybara
 * Back-end - Ruby, ERB
 * Front-end - HTML, CSS
-* Others - PostgreSQL, DataMapper, Sinatra, Database Cleaner, BCrypt
+* Others - PostgreSQL, DataMapper, Sinatra, Database Cleaner, BCrypt, Mailgun
 
 User stories:
 
