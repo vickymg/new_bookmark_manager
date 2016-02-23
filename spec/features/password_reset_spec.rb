@@ -3,6 +3,7 @@ feature 'Reset password' do
   before do
     sign_up
     Capybara.reset!
+    allow(SendRecoverLink).to receive(:call)
   end
   let(:user) { User.first }
 
@@ -63,4 +64,10 @@ feature 'Reset password' do
     click_button 'Submit'
     expect(page).to have_content('Password does not match the confirmation')
   end
+
+  scenario 'it calls the SendRecoverLink service to send the link' do
+    expect(SendRecoverLink).to receive(:call).with(user)
+    recover_password
+  end
+
 end

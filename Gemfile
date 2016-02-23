@@ -10,6 +10,7 @@ gem 'bcrypt'
 gem 'sinatra-flash'
 gem 'sinatra-partial'
 gem 'timecop'
+gem 'mailgun-ruby'
 
 group :test do
   gem 'database_cleaner'
