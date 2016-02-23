@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'securerandom'
 
 class User
 
@@ -10,7 +11,9 @@ class User
   property :id,         Serial
   property :username,   String, required: true, unique: true
   property :email,      String, required: true, unique: true
-  property :password_digest, Text
+  property :password_digest,      Text
+  property :password_token,       Text
+  property :password_token_time,  Time
 
   def password=(password)
     @password = password
@@ -24,6 +27,17 @@ class User
     else
       nil
     end
+  end
+
+  def generate_token
+    self.password_token = SecureRandom.hex
+    self.password_token_time = Time.now
+    self.save
+  end
+
+  def self.find_by_valid_token(token)
+    user = first(password_token: token)
+    user if user && user.password_token_time + (60*60) > Time.now
   end
 
   validates_confirmation_of :password
