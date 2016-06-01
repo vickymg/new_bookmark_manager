@@ -36,6 +36,22 @@ To download and use...
 $ git clone https://github.com/vickymg/new_bookmark_manager.git
 $ cd new_bookmark_manager
 $ bundle
-$ ruby app/app.rb
 ```
+Create two databases using PostgreSQL:
+```
+$ psql
+$ create database bookmark_manager_test;
+$ create database bookmark_manager_development;
+```
+Run the database migrations:
+```
+$ rake auto_migrate                  # For development db purposes
+$ rake auto_migrate RACK_ENV=test    # For testing db purposes
+```
+To start the app:
+```
+$ rackup
+```
+The page will be on http://localhost:9292/
+
 The app is also live at https://new-bookmark-manager.herokuapp.com/users/new
