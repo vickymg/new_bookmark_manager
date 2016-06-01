@@ -2,11 +2,16 @@
 <html>
   <head>
     <title>Bookmark Manager</title>
+    <link href="<%= url('/stylesheet.css') %>" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <%= partial :welcome %>
-    <%= partial :flash %>
+    <div id="header">
+      <%= partial :welcome %>
+      <h1 class="main"> Bookmark Manager </h1>
+      <h3 class="main"> Organise those links.
+      <%= partial :flash %>
+    </div>
     <%= yield %>
   </body>
 </html>

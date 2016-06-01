@@ -1,27 +1,25 @@
-<h1> Links </h1>
-
 <ul id='links'>
   <% @links.each do |link| %>
     <li>
-      Title: <%= link.title %>
-      URL: <%= link.url %>
-      Tags: <%= link.tags.map{ |tag| tag.name }.join(', ') %>
+      <%= link.title %>
+      <a href="<%= "http://"+link.url %>" target="_blank"><%= link.url %></a>
+      <%= link.tags.map{ |tag| tag.name }.join(', ') %>
     </li>
   <% end %>
 </ul>
 
-<form action='/links/new'>
-  <input type='submit' value='Add a new link'>
+<form class="button" action='/links/new'>
+  <input id=new_link type='submit' value='Add a new link'>
 </form>
 
-<form action='/links'>
-  <input type='submit' value='Show all links'>
+<form class="button" action='/links'>
+  <input id=show_all type='submit' value='Show all links'>
 </form>
 
-<form action='/tags/:name'>
+<form class="search" action='/tags/:name'>
   <label for='Search'>
       Filter links by tag...
     <input name='tag' type='text'>
-    <input type='submit' value='Search'>
+    <input id="search" type='submit' value='=> Search'>
   </label>
 </form>
