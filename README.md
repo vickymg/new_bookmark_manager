@@ -11,6 +11,10 @@ Technologies used:
 * Front-end - HTML, CSS
 * Others - PostgreSQL, DataMapper, Sinatra, Database Cleaner, BCrypt, Mailgun
 
+The app is live at https://new-bookmark-manager.herokuapp.com/links
+
+![bookmarkmanager](http://i.imgur.com/YpuZfdl.png?1)
+
 User stories:
 
 ```
@@ -53,5 +57,3 @@ To start the app:
 $ rackup
 ```
 The page will be on http://localhost:9292/
-
-The app is also live at https://new-bookmark-manager.herokuapp.com/users/new
