@@ -13,7 +13,7 @@ Technologies used:
 
 The app is live at https://new-bookmark-manager.herokuapp.com/links
 
-![bookmarkmanager](http://i.imgur.com/YpuZfdl.png?1)
+![bookmarkmanager](http://i.imgur.com/EaG8TRF.png)
 
 User stories:
 
